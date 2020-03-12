@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Personal Information Form</title>
+    <link rel="stylesheet" href="nice.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="page_2.css" />
+  </head>
+  <body onload="display_ct();">
+    <div class="container">
+      <div class="date_time">
+        <div class="time">
+          <p>Current Time: <span id="time"></span></p>
+          <script>
+            function display() {
+              var refresh = 1000;
+              mytime = setTimeout("display_ct()", refresh);
+            }
+            function display_ct() {
+              var dt = new Date();
+              document.getElementById(
+                "time"
+              ).innerHTML = dt.toLocaleTimeString();
+              display();
+            }
+          </script>
+        </div>
+        <div class="date">
+          <p>Today's Date: <span id="datetime"></span></p>
+          <script>
+            var dt = new Date();
+            document.getElementById(
+              "datetime"
+            ).innerHTML = dt.toLocaleDateString();
+          </script>
+        </div>
+      </div>
+
+      <h2>Enter Your Personal Information</h2>
+
+      <form
+        action="http://jkorpela.fi/cgi-bin/echo.cgi"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <div class="form-group">
+          <label for="Full_name">Full Name</label>
+          <input
+            type="Full Name"
+            name="Full Name"
+            class="form-control"
+            id="exampleInputEmail1"
+          />
+          <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+        </div>
+        <div class="form-group">
+          <label>Student ID</label>
+          <input
+            type="Student ID"
+            name="Student ID"
+            class="form-control"
+            id="exampleInputPassword1"
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Department</label>
+          <input
+            type="Student ID"
+            name="Department"
+            class="form-control"
+            id="exampleInputPassword1"
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Courses Signed Up</label>
+          <input
+            type="Courses Signed Up"
+            name="Courses Signed Up"
+            class="form-control"
+            id="exampleInputPassword1"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="Email ID">Email ID</label>
+          <input
+            type="email"
+            name="Email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+          />
+          <small id="emailHelp" class="form-text text-muted"
+            >We'll never share your email with anyone else.</small
+          >
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="reset" class="btn btn-primary">Reset</button>
+      </form>
+    </div>
+  </body>
+</html>

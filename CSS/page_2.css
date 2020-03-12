@@ -1,0 +1,27 @@
+
+body{
+  font-weight: 600;
+}
+
+.date_time div{
+  display: inline-block;
+  padding-top: 10px;
+}
+
+.date{
+  float: right;
+}
+
+
+h2{
+  margin-top: 20px;
+  text-align: center;
+  color: red;
+}
+
+form{
+
+  border: 2px solid black;
+  margin-top: 30px;
+  padding: 20px;
+}
